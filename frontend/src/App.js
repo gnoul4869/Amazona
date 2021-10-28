@@ -1,4 +1,5 @@
 import data from './data';
+import Product from './components/Product';
 
 function App() {
     return (
@@ -17,52 +18,7 @@ function App() {
             <main>
                 <div className="row center">
                     {data.products.map((product) => {
-                        const {
-                            id,
-                            name,
-                            category,
-                            image,
-                            price,
-                            brand,
-                            rating,
-                            numReviews,
-                            description,
-                        } = product;
-                        return (
-                            <div key={id} className="card">
-                                <a href={`/product/${id}`}>
-                                    <img
-                                        src={require(`${image}`).default}
-                                        alt={name}
-                                        className="medium"
-                                    />
-                                </a>
-                                <div className="card-body">
-                                    <a href={`/product/${id}`}>
-                                        <h2>{name}</h2>
-                                    </a>
-
-                                    <div className="rating">
-                                        <span>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                        <span>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                        <span>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                        <span>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                        <span>
-                                            <i className="fa fa-star"></i>
-                                        </span>
-                                    </div>
-                                    <div className="price">${price}</div>
-                                </div>
-                            </div>
-                        );
+                        return <Product key={product.id} {...product} />;
                     })}
                 </div>
             </main>
