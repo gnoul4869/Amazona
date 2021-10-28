@@ -5,7 +5,6 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.get('/api/products', (req, res) => {
-    console.log('ok');
     res.send(data.products);
 });
 
