@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import Rating from '../components/Rating';
 import data from '../data';
 
@@ -13,7 +14,8 @@ const ProductScreen = () => {
 
     return (
         <div>
-            <div className="row">
+            <Link to="/">Back to result</Link>
+            <div className="row top">
                 <div className="col-2">
                     <img src={product.image} alt={product.name} className="large" />
                 </div>
@@ -27,7 +29,7 @@ const ProductScreen = () => {
                         </li>
                         <li>Price: ${product.price}</li>
                         <li>
-                            <p>{product.description}</p>
+                            Description: <p>{product.description}</p>
                         </li>
                     </ul>
                 </div>
