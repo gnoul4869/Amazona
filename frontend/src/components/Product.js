@@ -11,7 +11,7 @@ const Product = ({ id, name, category, image, price, brand, rating, numReviews, 
                 <a href={`/product/${id}`}>
                     <h2>{name}</h2>
                 </a>
-                <Rating props={{ rating, numReviews }} />
+                <Rating rating={rating} numReviews={numReviews} />
                 <div className="price">${price}</div>
             </div>
         </div>
