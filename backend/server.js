@@ -9,7 +9,7 @@ app.get('/api/products', (req, res) => {
 });
 
 app.get('/api/products/:id', (req, res) => {
-    const product = data.products.find((item) => item.id === req.params.id);
+    const product = data.products.find((item) => item._id === req.params.id);
     if (product) {
         res.send(product);
     } else {

@@ -14,8 +14,6 @@ const HomeScreen = () => {
         dispatch(listProducts());
     }, [dispatch]);
 
-    console.log(products);
-
     return (
         <div>
             {loading ? (
@@ -25,7 +23,7 @@ const HomeScreen = () => {
             ) : (
                 <div className="row center">
                     {products.map((product) => {
-                        return <Product key={product.id} {...product} />;
+                        return <Product key={product._id} {...product} />;
                     })}
                 </div>
             )}
