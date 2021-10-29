@@ -142,6 +142,7 @@ img.medium {
 }
 
 img.large {
+    max-width: 50rem;
     width: 100%;
 }
 
