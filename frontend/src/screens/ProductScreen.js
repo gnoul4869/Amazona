@@ -32,11 +32,7 @@ const ProductScreen = (props) => {
                     <Link to="/">Back to result</Link>
                     <div className="row top">
                         <div className="col-2">
-                            <img
-                                src={product.image}
-                                alt={product.name}
-                                className="large"
-                            />
+                            <img src={product.image} alt={product.name} className="large" />
                         </div>
                         <div className="col-1">
                             <ul>
@@ -44,10 +40,7 @@ const ProductScreen = (props) => {
                                     <h1>{product.name}</h1>
                                 </li>
                                 <li>
-                                    <Rating
-                                        rating={product.rating}
-                                        numReviews={product.numReviews}
-                                    />
+                                    <Rating rating={product.rating} numReviews={product.numReviews} />
                                 </li>
                                 <li>Price: ${product.price}</li>
                                 <li>
@@ -61,9 +54,7 @@ const ProductScreen = (props) => {
                                     <li>
                                         <div className="row">
                                             <div>Price</div>
-                                            <div className="price">
-                                                ${product.price}
-                                            </div>
+                                            <div className="price">${product.price}</div>
                                         </div>
                                     </li>
                                     <li>
@@ -71,13 +62,9 @@ const ProductScreen = (props) => {
                                             <div>Status</div>
                                             <div>
                                                 {product.countInStock > 0 ? (
-                                                    <span className="success">
-                                                        In Stock
-                                                    </span>
+                                                    <span className="success">In Stock</span>
                                                 ) : (
-                                                    <span className="danger ">
-                                                        Unavailable
-                                                    </span>
+                                                    <span className="danger ">Unavailable</span>
                                                 )}
                                             </div>
                                         </div>
@@ -88,23 +75,9 @@ const ProductScreen = (props) => {
                                                 <div className="row">
                                                     <div>Qty</div>
                                                     <div>
-                                                        <select
-                                                            value={qty}
-                                                            onChange={(e) =>
-                                                                setQty(
-                                                                    e.target.value
-                                                                )
-                                                            }
-                                                        >
-                                                            {[
-                                                                ...Array(
-                                                                    product.countInStock
-                                                                ).keys(),
-                                                            ].map((x) => (
-                                                                <option
-                                                                    key={x + 1}
-                                                                    value={x + 1}
-                                                                >
+                                                        <select value={qty} onChange={(e) => setQty(e.target.value)}>
+                                                            {[...Array(product.countInStock).keys()].map((x) => (
+                                                                <option key={x + 1} value={x + 1}>
                                                                     {x + 1}
                                                                 </option>
                                                             ))}
@@ -113,10 +86,7 @@ const ProductScreen = (props) => {
                                                 </div>
                                             </li>
                                             <li>
-                                                <button
-                                                    className="primary block"
-                                                    onClick={addToCartHandler}
-                                                >
+                                                <button className="primary block" onClick={addToCartHandler}>
                                                     Add to Cart
                                                 </button>
                                             </li>

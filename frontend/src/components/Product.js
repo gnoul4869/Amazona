@@ -2,17 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
-const Product = ({
-    _id,
-    name,
-    category,
-    image,
-    price,
-    brand,
-    rating,
-    numReviews,
-    description,
-}) => {
+const Product = ({ _id, name, category, image, price, brand, rating, numReviews, description }) => {
     return (
         <div className="card">
             <Link to={`/product/${_id}`}>
