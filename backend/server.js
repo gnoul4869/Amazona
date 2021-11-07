@@ -5,6 +5,8 @@ import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js';
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded());
 
 mongoose.connect(process.env.MONGODB_URI);
 
