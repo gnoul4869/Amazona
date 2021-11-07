@@ -40,7 +40,10 @@ const ProductScreen = (props) => {
                                     <h1>{product.name}</h1>
                                 </li>
                                 <li>
-                                    <Rating rating={product.rating} numReviews={product.numReviews} />
+                                    <Rating
+                                        rating={product.rating}
+                                        numReviews={product.numReviews}
+                                    />
                                 </li>
                                 <li>Price: ${product.price}</li>
                                 <li>
@@ -75,8 +78,15 @@ const ProductScreen = (props) => {
                                                 <div className="row">
                                                     <div>Qty</div>
                                                     <div>
-                                                        <select value={qty} onChange={(e) => setQty(e.target.value)}>
-                                                            {[...Array(product.countInStock).keys()].map((x) => (
+                                                        <select
+                                                            value={qty}
+                                                            onChange={(e) => setQty(e.target.value)}
+                                                        >
+                                                            {[
+                                                                ...Array(
+                                                                    product.countInStock
+                                                                ).keys(),
+                                                            ].map((x) => (
                                                                 <option key={x + 1} value={x + 1}>
                                                                     {x + 1}
                                                                 </option>
@@ -86,7 +96,10 @@ const ProductScreen = (props) => {
                                                 </div>
                                             </li>
                                             <li>
-                                                <button className="primary block" onClick={addToCartHandler}>
+                                                <button
+                                                    className="primary block"
+                                                    onClick={addToCartHandler}
+                                                >
                                                     Add to Cart
                                                 </button>
                                             </li>
